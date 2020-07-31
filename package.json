@@ -1,11 +1,10 @@
 {
-  "name": "aws-lambda-youtube-dl",
-  "version": "1.0.0",
-  "description": "Download YouTube (and a few other sites) videos to S3 using Lambda.",
-  "author": "Michael Wittig <michael@widdix.de>",
+  "name": "aws-lambda-ytdl",
+  "version": "2.0.0",
+  "description": "Download YouTube videos to S3 using Lambda.",
   "license": "MIT",
   "dependencies": {
-    "youtube-dl": "1.13.1"
+    "ytdl-core": "^3.2.0"
   },
   "devDependencies": {
     "aws-sdk": "2.437.0"
