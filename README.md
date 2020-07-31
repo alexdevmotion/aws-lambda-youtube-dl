@@ -87,14 +87,24 @@ aws lambda add-permission --function-name $STACK --statement-id apigateway-prod-
 
 ## Invokation
 
-`GET` `https://$API.execute-api.$REGION.amazonaws.com/prod/$STACK?videoId=???`
+`GET` `https://$API.execute-api.$REGION.amazonaws.com/prod/$STACK?videoId=<ANY PUBLIC YOUTUBE VIDEO ID>`
+
+or
+
+`GET` `https://$API.execute-api.$REGION.amazonaws.com/prod/$STACK?videoUrl=<ANY PUBLIC YOUTUBE VIDEO URL>`
+
+or
+
+`GET` `https://$API.execute-api.$REGION.amazonaws.com/prod/$STACK?videoId=<ANY PUBLIC YOUTUBE VIDEO ID>&path=/some/folder/path/in/the/s3/bucket`
+
+`Note` See the queryParameters in `index.js`.
 
 ### Response
 
 ```
 {
   "bucketName": "test",
-  "key": "xyz.mp4",
+  "path": "xyz.mp4",
   "url": "s3://test/xyz.mp4"
 }
 ```

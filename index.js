@@ -9,7 +9,7 @@ const buildLambdaResponse = (bodyObj, statusCode = 200) => ({
 });
 
 /**
- * @param event pathParameters
+ * @param event queryParameters
  *   videoId: the id of the video; e.g. for https://www.youtube.com/watch?v=egs0XN-xjA0; the video id is egs0XN-xjA0 [pass either this param or videoUrl]
  *   videoUrl: the full video URL; e.g. https://www.youtube.com/watch?v=egs0XN-xjA0 [pass either this param or videoId]
  *   path?: optional folder path to upload to in the S3 bucket; e.g. new_videos
