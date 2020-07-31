@@ -8,13 +8,13 @@ Download YouTube videos to S3 using Lambda powered by [ytdl](https://www.npmjs.c
 
 If you never worked with `aws cloudformation package` before, create an S3 bucket that stores the ZIP files that the `package` command generates. Run the following command and replace `YOUR_BUCKET` with a unique bucket name: `aws s3 mb s3://YOUR_BUCKET`.
 
-Run the following command (replace `$BUCKET` with your S3 bucket name to store ZIP files) to package the source code:
+Run the following commands (replace `$BUCKET` with your S3 bucket name to store ZIP files) to package the source code:
 ```
 yarn
 aws cloudformation package --s3-bucket $BUCKET --template-file template.yml --output-template-file .packaged.yml
 ```
 
-Your output will look mostly like this:
+Your output will look like this:
 ```
 Uploading to 864a6c31b9b19e4abfba8d28d719b9a8  8460482 / 8460482.0  (100.00%)
 Successfully packaged artifacts and wrote output template to file .packaged.yml.
@@ -61,11 +61,8 @@ aws apigateway put-integration --rest-api-id $API --resource-id $RESOURCE --http
 --uri arn:aws:apigateway:$REGION:lambda:path/2015-03-31/functions/arn:aws:lambda:$REGION:$ACCOUNT:function:$STACK
 ```
 ```
-TODO create response model
-```
-```
 aws apigateway put-method-response --rest-api-id $API --resource-id $RESOURCE --http-method GET \
---status-code 200 --response-models application/json=Success
+--status-code 200 --response-models application/json=Empty
 ```
 ```
 aws apigateway put-integration-response --rest-api-id $API --resource-id $RESOURCE --http-method GET \
